@@ -1,0 +1,15 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2px;
+    height: 20vh;
+    width: 120vh;
+    background-color: red;
+  }
+  
+h1 {
+    text-decoration: black;
+    color: black;
+    font-size: 2rem;
+}

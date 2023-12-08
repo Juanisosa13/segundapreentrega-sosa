@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import "./nav.module.css";
 import { CartWidget } from "../CartWidget/CartWidget";
 
 export const NavBar = () => {
   return (
-    <nav className="d-flex justify-content-around mt-2">
+    <nav class="container">
       <Link to={"/"}>
-        <h4>Tienda App</h4>
+        <h1 class="titulonav">GildaShop</h1>
       </Link>
       <div>
         <Link to={"/"}>

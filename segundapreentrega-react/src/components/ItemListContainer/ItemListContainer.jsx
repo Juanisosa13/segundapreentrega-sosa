@@ -12,15 +12,20 @@ export const ItemListContainer = ({ greeting }) => {
 
   useEffect(() => {
 
-    setIsLoading(true); 
+    setIsLoading(true);
     getProducts()
       .then((resp) => {
+
         if(category) {
+
         const productsFilter = resp.filter(product => product.category === category);
+
         setProducts(productsFilter);
+
         setIsLoading(false);
         
         } else {
+
           setProducts(resp);
         setIsLoading(false);
           
@@ -28,12 +33,13 @@ export const ItemListContainer = ({ greeting }) => {
  
       })
       .catch((error) => console.log(error));
-  }, [category]); 
+  }, [category]); // En el array de dependencia controlamos si se modifica el valor de la category para recargar el componente
 
 
   return (
     <>
       <div> {greeting} </div>
+      {/* si isLoading está en true va a mostrar Cargando productos... pero cuando se pase a false va a renderizar los productos */}
       { isLoading ? <h2>Cargando productos ..</h2> : <ItemList products={products} /> }
     </>
   );
